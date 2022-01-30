@@ -6,14 +6,10 @@ def umnoz(a, b): return print(a * b)
 def delit(a, b): return print(a / b)
 while True:
     operation = input('Введите знак: ')
-    if operation == '0':
-        break
-    elif operation == '+':
-        plus(num1, num2)
-    elif operation == '-':
-        minus(num1, num2)
-    elif operation == '*':
-        umnoz(num1, num2)
+    if operation == '0': break
+    elif operation == '+': plus(num1, num2)
+    elif operation == '-': minus(num1, num2)
+    elif operation == '*': umnoz(num1, num2)
     elif operation == '/':
         try:
             delit(num1, num2)

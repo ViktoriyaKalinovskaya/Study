@@ -1,0 +1,8 @@
+name = input('Введите имя ')
+sN = input('Введите фамилию ')
+mN = input('Введите отчество ')
+age = int(input('Введите возраст '))
+place = input('Введите город проживания ')
+print(name +' '+ sN +' '+ mN)
+print(age)
+print(place)

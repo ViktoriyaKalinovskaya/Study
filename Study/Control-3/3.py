@@ -12,21 +12,21 @@ class Tomato:
         return self._state
     def is_ripe(self):
         if self._state == 3:
-            print(self.states[3])
+            return True
 
 class TomatoBush:
     def __init__(self, tomatoes):
         self.tomatoes = [Tomato(i) for i in range(tomatoes)]
     def grow_all(self):
         for k in self.tomatoes:
-            k._state += 1
+            k.grow()
     def all_are_ripe(self):
         true = []
         for a in self.tomatoes:
-            if a._state == 3:
+            if a.is_ripe() == True:
                 true.append(True)
-                if False in true: print(False)
-                else: print(True)
+        if False in true: print(False)
+        else: print(True)
     def give_away_all(self):
         self.tomatoes.clear()
 

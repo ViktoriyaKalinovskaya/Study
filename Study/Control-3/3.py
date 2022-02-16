@@ -1,5 +1,5 @@
 class Tomato:
-    states = {1: 'зелёный помидор', 2: 'желтый помидор', 3: 'спелый помидор'}
+    states = {1: 'Помидор зелёный', 2: 'Помидор ещё желтый', 3: 'Помидор созрел'}
     key = []
     for j in states.keys():
         key.append(j)
@@ -12,11 +12,10 @@ class Tomato:
         return self._state
     def is_ripe(self):
         if self._state == 3:
-            print('Помидор созрел!')
+            print(self.states[3])
 
-class TomatoBush(Tomato):
+class TomatoBush:
     def __init__(self, tomatoes):
-        super().__init__(tomatoes)
         self.tomatoes = [Tomato(i) for i in range(tomatoes)]
     def grow_all(self):
         for k in self.tomatoes:
@@ -26,8 +25,8 @@ class TomatoBush(Tomato):
         for a in self.tomatoes:
             if a._state == 3:
                 true.append(True)
-                if True in true: print(True)
-                else: print(False)
+                if False in true: print(False)
+                else: print(True)
     def give_away_all(self):
         self.tomatoes.clear()
 
@@ -41,7 +40,8 @@ class Gardener:
         if self._plant.all_are_ripe() == True:
             self._plant.give_away_all()
             print('Урожай собран!')
-        else: print('Ещё не все плоды созрели!')
+        else:
+            print('Ещё не все плоды созрели!')
     @staticmethod
     def knowledge_base():
         pass
@@ -49,4 +49,5 @@ class Gardener:
 Gardener.knowledge_base()
 tomatoes = TomatoBush(5)
 gardener = Gardener('Maksim', tomatoes)
-print(tomatoes.grow())
+gardener.work()
+gardener.harvest()

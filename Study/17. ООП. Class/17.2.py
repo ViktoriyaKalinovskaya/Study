@@ -7,7 +7,6 @@
 # car_object = Car() # создание объекта класса
 # print(dir(Car))
 
-
 class Car:
     # Статитеские поля (переменные класса)
     default_color = 'Grey'
